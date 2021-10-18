@@ -1,26 +1,14 @@
-function moveDodgerLeft() {
-    const leftNumbers = dodger.style.left.replace("px", "");
-    const left = parseInt(leftNumbers, 10);
+const dodger = document.getElementById('dodger');
 
-    if (left > 0) {
-        dodger.style.left = `${left - 1}px`;
-    }
+function moveDodgerLeft(e) {
+    dodger.style.left = "-180px";
 }
-document.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowLeft") {
-        moveDodgerLeft();
-    }
-});
-function moveDodgerRight() {
-    const leftNumbers = dodger.style.left.replace("px", "");
-    const left = parseInt(leftNumbers, 10);
 
-    if (left < 360) {
-        dodger.style.left = `${left + 1}px`;
-    }
+dodger.addEventListener('click', moveDodgerLeft);
+
+function moveDodgerRight(e) {
+    dodger.style.left = "360px"
+
 }
-document.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowRight") {
-        moveDodgerRight();
-    }
-});
+
+dodger.addEventListener('click', moveDodgerRight)
